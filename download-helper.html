@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Download Helper</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    h2 { margin-top: 30px; }
+    pre { background: #f5f5f5; padding: 10px; border-radius: 5px; overflow-x: auto; }
+    .code-container { margin-bottom: 20px; }
+  </style>
+</head>
+<body>
+  <h1>Pyragogy Website Files</h1>
+  <p>Copia il contenuto di questi file e salvali nella stessa struttura di cartelle sul tuo computer.</p>
+  
+  <h2>docs/index.html</h2>
+  <div class="code-container">
+    <pre id="index-html"></pre>
+  </div>
+  
+  <h2>docs/assets/index-CXyGvEL2.js</h2>
+  <div class="code-container">
+    <pre id="js-file"></pre>
+  </div>
+  
+  <h2>docs/assets/index-DWTn3dg9.css</h2>
+  <div class="code-container">
+    <pre id="css-file"></pre>
+  </div>
+
+  <script>
+    // Funzione per caricare il contenuto dei file
+    async function loadFileContent(path, elementId) {
+      try {
+        const response = await fetch(path);
+        const text = await response.text();
+        document.getElementById(elementId).textContent = text;
+      } catch (error) {
+        document.getElementById(elementId).textContent = `Errore nel caricamento del file: ${error.message}`;
+      }
+    }
+
+    // Carica i contenuti quando la pagina è pronta
+    window.addEventListener('DOMContentLoaded', () => {
+      loadFileContent('/docs/index.html', 'index-html');
+      loadFileContent('/docs/assets/index-CXyGvEL2.js', 'js-file');
+      loadFileContent('/docs/assets/index-DWTn3dg9.css', 'css-file');
+    });
+  </script>
+</body>
+</html>
