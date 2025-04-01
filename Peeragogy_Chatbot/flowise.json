@@ -1,0 +1,7 @@
+{
+  "PORT": 10000,
+  "FLOWISE_USERNAME": "admin",
+  "FLOWISE_PASSWORD": "peerpower2025",
+  "DATABASE_PATH": "flowise.db"
+}
+
