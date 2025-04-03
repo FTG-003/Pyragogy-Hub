@@ -5,11 +5,15 @@ app = "pyragogy-chatbot"
 
 [env]
   PORT = "3000"
-  HOST = "0.0.0.0"  # 👈 Aggiunta cruciale per esporre Flowise su Fly.io
+  HOST = "0.0.0.0"
+
+[processes]
+  app = "flowise start"
 
 [[services]]
   internal_port = 3000
   protocol = "tcp"
+  processes = ["app"]
 
   [[services.ports]]
     handlers = ["http"]
