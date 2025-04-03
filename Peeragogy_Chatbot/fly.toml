@@ -1,7 +1,18 @@
-app = "pyragogybot"  # cambia con il nome reale della tua app Fly.io
+app = "pyragogy-chatbot"
 
-[build]
-  dockerfile = "./Dockerfile"
+[env]
+PORT = "3000"
+FLOWISE_USERNAME = "admin"
+FLOWISE_PASSWORD = "peerpower2025"
+OPENAI_API_KEY = "sk-..."                      # ← Inserisci la tua
+PINECONE_API_KEY = "..."                       # ← Inserisci la tua
+PINECONE_ENVIRONMENT = "us-east-1-gcp"
+PINECONE_INDEX = "your_index_name"
+DATABASE_URL = "mongodb+srv://admin:peerpass2025@cluster0.buihalo.mongodb.net/flowise?retryWrites=true&w=majority&appName=Cluster0"
+
+[mounts]
+  source = "flowise_data"
+  destination = "/root/.flowise"
 
 [[services]]
   internal_port = 3000
@@ -9,13 +20,6 @@ app = "pyragogybot"  # cambia con il nome reale della tua app Fly.io
 
   [[services.ports]]
     port = 80
-    handlers = ["http"]
-
   [[services.ports]]
     port = 443
-    handlers = ["tls", "http"]
-
-[resources]
-  cpu = "shared-cpu-1x"
-  memory = "256mb"
 
