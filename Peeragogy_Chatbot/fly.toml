@@ -1,13 +1,29 @@
 # fly.toml
-# ... (resto del file come prima, inclusa la sezione [env])
+app = "pyragogy-chatbot"
 
+[build]
+  dockerfile = "./Dockerfile"
+
+[env]
+  PORT = "3000"
+  HOST = "0.0.0.0"
+
+# 1. DEFINISCI IL PROCESSO QUI
 [processes]
-  # Tentativo di passare host/port come argomenti
-  app = "flowise start --host 0.0.0.0 --port 3000"
+  # Qui definisci un nome (es. "app") e il comando da eseguire
+  app = "flowise start"  # O "flowise start --host 0.0.0.0 --port 3000" se serve
 
+# 2. FAI RIFERIMENTO AL NOME DEL PROCESSO ("app") QUI
 [[services]]
   internal_port = 3000
   protocol = "tcp"
-  processes = ["pyragogy-chatbot"] # Assicurati che questo sia corretto
+  # Questa riga deve usare il nome definito in [processes], cioè "app"
+  processes = ["app"] 
 
-  # ... (resto della sezione services)
+  [[services.ports]]
+    handlers = ["http"]
+    port = 80
+
+  [[services.ports]]
+    handlers = ["tls", "http"]
+    port = 443
