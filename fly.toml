@@ -1,9 +1,9 @@
-# fly.toml app configuration file generated for pyragogy-chatbot on 2025-04-03T02:52:29Z
+# fly.toml app configuration file generated for pyragogy-hub on 2025-04-03T13:48:01Z
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'pyragogy-chatbot'
+app = 'pyragogy-hub'
 primary_region = 'fra'
 
 [build]
