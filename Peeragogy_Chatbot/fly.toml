@@ -1,15 +1,5 @@
 app = "pyragogy-chatbot"
 
-# File: Peeragogy_Chatbot/Dockerfile
-FROM flowiseai/flowise
-EXPOSE 3000
-CMD ["flowise", "start"]
-
----
-# 🛫 fly.toml
-# File: Peeragogy_Chatbot/fly.toml
-app = "pyragogy-chatbot"
-
 [build]
   dockerfile = "./Dockerfile"
 
@@ -27,3 +17,4 @@ app = "pyragogy-chatbot"
   [[services.ports]]
     handlers = ["tls", "http"]
     port = 443
+
