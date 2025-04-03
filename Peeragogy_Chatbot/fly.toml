@@ -8,6 +8,6 @@
 [[services]]
   internal_port = 3000
   protocol = "tcp"
-  processes = ["app"] # Assicurati che questo sia corretto
+  processes = ["pyragogy-chatbot"] # Assicurati che questo sia corretto
 
   # ... (resto della sezione services)
