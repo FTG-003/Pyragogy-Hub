@@ -8,17 +8,15 @@ app = "pyragogy-chatbot"
   PORT = "3000"
   HOST = "0.0.0.0"
 
-# 1. DEFINISCI IL PROCESSO QUI
+# Sezione PROCESSI - Deve esserci e definire il nome 'app'
 [processes]
-  # Qui definisci un nome (es. "app") e il comando da eseguire
-  app = "flowise start"  # O "flowise start --host 0.0.0.0 --port 3000" se serve
+  app = "flowise start" 
 
-# 2. FAI RIFERIMENTO AL NOME DEL PROCESSO ("app") QUI
+# Sezione SERVIZI - Deve fare riferimento al nome 'app' nell'array
 [[services]]
   internal_port = 3000
   protocol = "tcp"
-  # Questa riga deve usare il nome definito in [processes], cioè "app"
-  processes = ["app"] 
+  processes = ["app"] # <<< FONDAMENTALE: nome del processo tra [""]
 
   [[services.ports]]
     handlers = ["http"]
