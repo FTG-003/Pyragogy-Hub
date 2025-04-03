@@ -1,25 +1,27 @@
+# File: Peeragogy_Chatbot/Dockerfile
+FROM flowiseai/flowise
+EXPOSE 3000
+CMD ["flowise", "start"]
+
+---
+# 🛫 fly.toml
+# File: Peeragogy_Chatbot/fly.toml
 app = "pyragogy-chatbot"
 
-[env]
-PORT = "3000"
-FLOWISE_USERNAME = "admin"
-FLOWISE_PASSWORD = "peerpower2025"
-OPENAI_API_KEY = "sk-..."                      # ← Inserisci la tua
-PINECONE_API_KEY = "..."                       # ← Inserisci la tua
-PINECONE_ENVIRONMENT = "us-east-1-gcp"
-PINECONE_INDEX = "your_index_name"
-DATABASE_URL = "mongodb+srv://admin:peerpass2025@cluster0.buihalo.mongodb.net/flowise?retryWrites=true&w=majority&appName=Cluster0"
+[build]
+  dockerfile = "./Dockerfile"
 
-[mounts]
-  source = "flowise_data"
-  destination = "/root/.flowise"
+[env]
+  PORT = "3000"
 
 [[services]]
   internal_port = 3000
   protocol = "tcp"
 
   [[services.ports]]
+    handlers = ["http"]
     port = 80
-  [[services.ports]]
-    port = 443
 
+  [[services.ports]]
+    handlers = ["tls", "http"]
+    port = 443
