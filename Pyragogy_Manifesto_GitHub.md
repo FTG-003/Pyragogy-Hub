@@ -1,7 +1,7 @@
 # The Pyragogy Manifesto
 **Co-creating the Future of Learning with AI and Peeragogy**
-**(Version 1.0 - April 1, 2025)**
-## Preamble: From Peeragogy to Pyragogy
+***(Version 1.0 - April 1, 2025)***
+## Preamble: Peeragogy Vs Pyragogy
 We stand at a pivotal moment where human connection meets artificial intelligence. For years, the *Peeragogy* project ([peeragogy.org](https://peeragogy.org)) has championed the art and science of peer learning, building a global community dedicated to collaborative knowledge creation. Now, as AI integrates ever deeper into our lives, we embrace the natural evolution of these principles: **Pyragogy**.
 Pyragogy extends Peeragogy by intentionally integrating AI as a partner within the collaborative learning process. It's not just about using new tools; it's about fundamentally rethinking how we learn *together* – humans and AI – leveraging the unique strengths of both. This manifesto outlines the core commitments of Pyragogy, inviting you – educators, learners, researchers, developers, and fellow Peeragogy community members – to join us in architecting a future where learning is profoundly human, radically collaborative, and intelligently amplified.
 ## Core Principles: Our Commitments
