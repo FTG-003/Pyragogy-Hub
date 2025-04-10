@@ -1,9 +1,0 @@
-<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="200" cy="200" r="180" fill="#EFF6FF" />
-  <path d="M200 80 L320 200 L200 320 L80 200 Z" fill="#BFDBFE" />
-  <circle cx="200" cy="200" r="100" fill="#93C5FD" />
-  <path d="M200 120 L260 200 L200 280 L140 200 Z" fill="#3B82F6" />
-  <circle cx="200" cy="200" r="40" fill="#1D4ED8" />
-  <path d="M200 170 L215 200 L200 230 L185 200 Z" fill="#8B5CF6" />
-  <circle cx="200" cy="200" r="15" fill="#6D28D9" />
-</svg>
